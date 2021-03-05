@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Learning Custom Web Components</title>
+  <script src="tooltip.js"></script>
+  <script src="confirm-link.js"></script>
+</head>
+<body>
+
+  <!-- creating a tooltip component -->
+  <h2>Working with a custom tooltip component:</h2>
+  <p>
+    <qs-tooltip text="Web Components">Web Components</qs-tooltip> are awesome
+  </p>
+  <qs-tooltip text="attribute provided via prop">Default</qs-tooltip>
+  <br><br>
+  <qs-tooltip></qs-tooltip>
+  <br><br>
+  <div>
+    Note: this does not get styles with the custom component styling due to the shadow dom.
+  </div>
+  <hr>
+
+  <h2>Extending built in components:</h2>
+  <!-- when extending an exidting element we point to the name via the is="" attribute -->
+  <a 
+    is="qs-confirm-link" 
+    href="https://google.com" 
+    target="_blank"
+  >Visit Google</a>
+
+</body>
+</html>

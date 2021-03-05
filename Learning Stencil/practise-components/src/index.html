@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=5.0" />
+    <title>Stencil Component Starter</title>
+
+    <style>
+      * {
+        font-family: sans-serif;
+        box-sizing: border-box;
+      }
+
+      .side-nav ul {
+        list-style: none;
+        margin-left: -25px;
+      }
+
+      .side-nav li {
+        margin: 16px 0;
+      }
+
+      .side-nav a {
+        text-decoration: none;
+        color: rgb(14, 30, 75);
+      }
+    </style>
+
+    <script type="module" src="/build/practise-components.esm.js"></script>
+    <script nomodule src="/build/practise-components.js"></script>
+  </head>
+  <body>
+
+    <button id="side-drawer-button">Open Sidebar</button>
+    <qs-side-drawer title="Quantified Strategies">
+      <nav class="side-nav">
+        <!-- note the slotted content can only be styled in the light DOM -->
+        <ul>
+          <li> <a href="/">Dashboard</a> </li>
+          <li> <a href="/settings">Settings</a> </li>
+          <li> <a href="/support">Support</a> </li>
+        </ul>
+      </nav>
+    </qs-side-drawer>
+
+    <hr>
+
+    <qs-tooltip-display text="Dynamic is cool">
+      get the hover working!!
+    </qs-tooltip-display>
+
+    <hr>
+
+    <qs-stock-picker heading="Getting the stock price from an API.."></qs-stock-picker>
+
+    <script>
+      const sideDrawerButton = document.querySelector('#side-drawer-button');
+      const sideDrawer = document.querySelector('qs-side-drawer');
+
+      sideDrawerButton.addEventListener('click', () => {
+        if (!sideDrawer.opened) {
+          sideDrawer.open() == true;
+        }
+      });
+    </script>
+
+  </body>
+</html>
